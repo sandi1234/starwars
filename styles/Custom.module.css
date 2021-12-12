@@ -1,0 +1,62 @@
+.pointer {
+  cursor: pointer;
+}
+
+.half {
+  margin-top: 15%;
+}
+
+.iconLinkTxt {
+  margin-top: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.cardIconMP {
+  padding: 40px;
+}
+
+.cardIcon {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid ghostwhite;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.cardIcon:hover {
+  background: rgba(255, 1, 1, 0.5);
+  color: ghostwhite;
+}
+
+.cardBG {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid ghostwhite;
+  color: whitesmoke;
+}
+
+.cardBG:hover {
+  background: rgba(255, 1, 1, 0.5);
+}
+
+.center {
+  text-align: center;
+}
+
+.iconSize {
+  font-size: 48px;
+}
+
+.margin10 {
+  margin: 10px;
+}
+
+.logo {
+  margin: 20px auto;
+  font-size: 48px;
+  color: red;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: #dc3545;
+}

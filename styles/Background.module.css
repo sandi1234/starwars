@@ -1,0 +1,11 @@
+.bgImage {
+  background: url(../src/images/starwars-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.fullVeiw {
+  height: 1800px;
+}
