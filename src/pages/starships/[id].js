@@ -1,14 +1,16 @@
 import axios from 'axios'
+import Starship from '../../components/Starships/Starship'
+import customStyles from '../../../styles/Custom.module.css'
 
-const PersonData = ({ data }) => {
+const StarshipData = ({ data }) => {
   return (
-    <div>
-      <h1>{data.name}</h1>
+    <div className={customStyles.ppp}>
+      <Starship data={data} />
     </div>
   )
 }
 
-export default PersonData
+export default StarshipData
 
 export async function getServerSideProps(context) {
   const { id } = context.query

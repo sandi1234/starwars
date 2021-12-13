@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import Pagination from '../../../components/Pagination'
+import UniNameCard from '../../../components/UniNameCard'
 import { Col, Container, Row } from 'react-bootstrap'
-import UniNameCard from '../../components/UniNameCard'
-import MoreLink from '../../components/MorePageBtn'
-import customStyles from '../../../styles/Custom.module.css'
+import customStyles from '../../../../styles/Custom.module.css'
 
-export default function Index({ data, API_URL }) {
+export default function Index({ data, API_URL, testo }) {
+  console.log(API_URL)
   return (
     <div>
       <Head>
@@ -15,9 +16,15 @@ export default function Index({ data, API_URL }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className={` ${customStyles.pp}`}>
+      <div className={` ${customStyles.ppp}`}>
         <div className={` ${customStyles.centerContainer}`}>
           <div className={customStyles.centerContent}>
+            <Pagination
+              spaceing='2px'
+              next={data.next}
+              pageNumber={data.count}
+              previous={data.previous}
+            />
             <Container>
               <Row>
                 {data.results.map((vehicle, index) => (
@@ -25,7 +32,12 @@ export default function Index({ data, API_URL }) {
                 ))}
               </Row>
             </Container>
-            <MoreLink />
+            <Pagination
+              spaceing='2px'
+              next={data.next}
+              pageNumber={data.count}
+              previous={data.previous}
+            />
           </div>
         </div>
       </div>
@@ -33,10 +45,14 @@ export default function Index({ data, API_URL }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const { id } = context.query
+
   const { API_URL } = process.env
 
-  const res = await fetch(`${API_URL}/vehicles`)
+  const testo = context.params
+
+  const res = await fetch(`${API_URL}/vehicles/?page=${id}`)
   const data = await res.json()
 
   if (!data) {
@@ -49,6 +65,6 @@ export async function getServerSideProps() {
   }
 
   return {
-    props: { data, API_URL },
+    props: { data, API_URL, testo },
   }
 }

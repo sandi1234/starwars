@@ -4,25 +4,25 @@ import Name from './Name'
 import { Card, Col } from 'react-bootstrap'
 import styles from '../../../styles/Custom.module.css'
 
-const Index = ({ person, API_URL }) => {
+const Index = ({ data, API_URL }) => {
   console.log(API_URL)
 
   let url = ''
 
   if (API_URL != undefined) {
-    url = person.url.substring(API_URL.length, person.url.length)
+    url = data.url.substring(API_URL.length, data.url.length)
   } else {
     url = ''
   }
 
-  // console.log(person.url)
+  // console.log(data.url)
   return (
-    <Link href={url}>
-      <Col lg={4} md={4} sm={4} xs={12}>
+    <Link href={url} passHref>
+      <Col lg={6} md={6} sm={6} xs={12}>
         <Card
           className={`text-center mb-2 p-3 ${styles.pointer} ${styles.cardBG}`}
         >
-          <Name name={person.name} />
+          <Name name={data.name} />
         </Card>
       </Col>
     </Link>

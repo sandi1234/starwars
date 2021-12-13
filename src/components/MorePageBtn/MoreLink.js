@@ -7,7 +7,7 @@ const MoreLink = ({ localMoreLink }) => {
     'More of ' + localMoreLink.substring(localMoreLink.indexOf('/') + 1)
   console.log(strPath)
   return (
-    <Link href={`${localMoreLink}/page/2`}>
+    <Link href={`${localMoreLink}/page/2`} passHref>
       <Button variant='danger'>{strPath.toUpperCase()}</Button>
     </Link>
   )

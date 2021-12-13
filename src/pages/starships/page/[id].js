@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Pagination from '../../../components/Pagination'
 import UniNameCard from '../../../components/UniNameCard'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import customStyles from '../../../../styles/Custom.module.css'
 
 export default function Index({ data, API_URL, testo }) {
@@ -14,7 +14,7 @@ export default function Index({ data, API_URL, testo }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className={` ${customStyles.pppp}`}>
+      <div className={` ${customStyles.ppp}`}>
         <div className={` ${customStyles.centerContainer}`}>
           <div className={customStyles.centerContent}>
             <Pagination
@@ -25,8 +25,8 @@ export default function Index({ data, API_URL, testo }) {
             />
             <Container>
               <Row>
-                {data.results.map((person, index) => (
-                  <UniNameCard key={index} API_URL={API_URL} data={person} />
+                {data.results.map((starship, index) => (
+                  <UniNameCard key={index} API_URL={API_URL} data={starship} />
                 ))}
               </Row>
             </Container>
@@ -50,7 +50,7 @@ export async function getServerSideProps(context) {
 
   const testo = context.params
 
-  const res = await fetch(`${API_URL}/people/?page=${id}`)
+  const res = await fetch(`${API_URL}/starships/?page=${id}`)
   const data = await res.json()
 
   if (!data) {

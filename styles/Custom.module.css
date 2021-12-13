@@ -2,11 +2,32 @@
   cursor: pointer;
 }
 
+.noPadding {
+  padding: 0px;
+  background-color: red;
+}
+
 .half {
   margin-top: 15%;
 }
 
+.centerContainer {
+  /* margin-top: -120px; */
+  /* background: #cccccc; */
+  height: 80vh;
+  width: 100vw;
+  position: relative;
+}
+.centerContent {
+  /* background: #ffff00; */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .iconLinkTxt {
+  width: 100px;
   margin-top: 20px;
   letter-spacing: 2px;
   cursor: pointer;
@@ -59,4 +80,30 @@
 
 .logo:hover {
   color: #dc3545;
+}
+
+.transImage {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 600px) {
+  .centerContainer {
+    margin-top: 120px;
+    margin-bottom: 40px;
+  }
+
+  .pp {
+    margin-top: 250px;
+    margin-bottom: 40px;
+  }
+
+  .ppp {
+    margin-top: 350px;
+    margin-bottom: 40px;
+  }
+
+  .pppp {
+    margin-top: 400px;
+    margin-bottom: 40px;
+  }
 }

@@ -1,9 +1,10 @@
-import axios from 'axios'
+import Person from '../../components/People/Person'
+import customStyles from '../../../styles/Custom.module.css'
 
 const PersonData = ({ data }) => {
   return (
-    <div>
-      <h1>{data.name}</h1>
+    <div className={customStyles.pp}>
+      <Person data={data} />
     </div>
   )
 }

@@ -15,7 +15,7 @@ const PageNumber = ({ pageNumber, path, spaceing }) => {
   return (
     <>
       {pageNumbers.map((pageID) => (
-        <Link key={pageID} href={`${path}${pageID}`}>
+        <Link key={pageID} href={`${path}${pageID}`} passHref>
           <Button
             style={{ margin: spaceing }}
             variant={router.query.id == pageID ? 'danger' : 'light'}

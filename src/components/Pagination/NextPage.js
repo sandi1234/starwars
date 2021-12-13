@@ -14,7 +14,7 @@ const NextPage = ({ path, next }) => {
   return (
     <>
       {nextPageID ? (
-        <Link href={(path, nextPageID)}>
+        <Link href={(path, nextPageID)} passHref>
           <Button variant='danger'>&#10095;</Button>
         </Link>
       ) : (

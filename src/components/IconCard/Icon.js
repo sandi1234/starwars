@@ -5,7 +5,7 @@ import Styles from '../../../styles/Custom.module.css'
 const Icon = ({ icon, localLink }) => {
   return (
     <div className={Styles.pointer}>
-      <Link href={localLink}>
+      <Link href={localLink} passHref>
         <i className={`${icon} ${Styles.iconSize}`}></i>
       </Link>
     </div>

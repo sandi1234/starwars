@@ -1,14 +1,15 @@
-import axios from 'axios'
+import Vehicle from '../../components/Vehicles/Vehicle'
+import customStyles from '../../../styles/Custom.module.css'
 
-const PersonData = ({ data }) => {
+const VehicleData = ({ data }) => {
   return (
-    <div>
-      <h1>{data.name}</h1>
+    <div className={`${customStyles.ppp}`}>
+      <Vehicle data={data} />
     </div>
   )
 }
 
-export default PersonData
+export default VehicleData
 
 export async function getServerSideProps(context) {
   const { id } = context.query

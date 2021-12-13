@@ -14,7 +14,7 @@ const PreviousPage = ({ path, previous }) => {
   return (
     <>
       {PreviousPageID ? (
-        <Link href={(path, PreviousPageID)}>
+        <Link href={(path, PreviousPageID)} passHref>
           <Button variant='danger'>&#10094;</Button>
         </Link>
       ) : (

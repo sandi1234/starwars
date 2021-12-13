@@ -5,6 +5,8 @@ const Index = ({ children }) => {
   return (
     <div>
       <Head>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         {/* <link
           rel='stylesheet'
           href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css'
@@ -15,14 +17,14 @@ const Index = ({ children }) => {
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'
           integrity='sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=='
-          crossorigin='anonymous'
+          crossOrigin='anonymous'
           referrerpolicy='no-referrer'
         />
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css'
           integrity='sha512-rQgMaFKZKIoTKfYInSVMH1dSM68mmPYshaohG8pK17b+guRbSiMl9dDbd3Sd96voXZeGerRIFFr2ewIiusEUgg=='
-          crossorigin='anonymous'
+          crossOrigin='anonymous'
           referrerpolicy='no-referrer'
         />
         {/* <script
@@ -32,7 +34,7 @@ const Index = ({ children }) => {
         ></script> */}
       </Head>
       <div className='text-center m-3'>
-        <Link href='/'>
+        <Link href='/' passHref>
           <i className={`${Style.logo} fab fa-jedi-order`}></i>
         </Link>
       </div>

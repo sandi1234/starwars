@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const LocalLink = ({ localLink, linkTxt }) => {
   return (
-    <Link href={localLink}>
+    <Link href={localLink} passHref>
       <div className={styles.iconLinkTxt}>{linkTxt}</div>
     </Link>
   )

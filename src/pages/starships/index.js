@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Person from '../../components/people/person'
-import Image from 'next/image'
+import { Col, Container, Row } from 'react-bootstrap'
+import UniNameCard from '../../components/UniNameCard'
+import MoreLink from '../../components/MorePageBtn'
+import customStyles from '../../../styles/Custom.module.css'
 
 export default function Index({ data, API_URL }) {
   return (
@@ -12,18 +13,19 @@ export default function Index({ data, API_URL }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div>
-        {data.results.map((ship, index) => (
-          <Link
-            key={index}
-            href={`/starships${ship.url.slice(ship.url.indexOf(32) + 32)}`}
-          >
-            <h1>
-              <div>{ship.name}</div>
-              <div></div>
-            </h1>
-          </Link>
-        ))}
+      <div className={` ${customStyles.pp}`}>
+        <div className={` ${customStyles.centerContainer}`}>
+          <div className={customStyles.centerContent}>
+            <Container>
+              <Row>
+                {data.results.map((starship, index) => (
+                  <UniNameCard key={index} API_URL={API_URL} data={starship} />
+                ))}
+              </Row>
+            </Container>
+            <MoreLink />
+          </div>
+        </div>
       </div>
     </div>
   )
